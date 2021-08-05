@@ -2,3 +2,4 @@ name: Generators
 mode: dart
 files:
   - name: main.dart
+  - name: test.dart

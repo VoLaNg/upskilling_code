@@ -3,12 +3,12 @@ class DataSource extends Iterable<int> {
   final List<int> items;
 
   @override
-  Iterator<int> get iterator => ;
+  Iterator<int> get iterator => /* complete the getter */;
 }
 
 List<String> mapping(DataSource input) {
   final List<String> result = [];
-  final changedData = ;
+  final changedData = /* transform int to string according to challenge explanation */;
   changedData.forEach((element) {
     result.add(element);
   });
