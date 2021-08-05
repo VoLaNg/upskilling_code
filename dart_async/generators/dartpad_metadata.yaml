@@ -1,0 +1,4 @@
+name: Generators
+mode: dart
+files:
+  - name: main.dart
