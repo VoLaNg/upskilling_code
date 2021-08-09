@@ -1,4 +1,4 @@
-typedef TestFunction = List<String> Function(List<int>);
+typedef TestFunction = List<String> Function(DataSource input);
 
 void main() {
   final testMap = {
