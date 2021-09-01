@@ -1,0 +1,5 @@
+name: State management Vanilla Flutter example
+mode: dart
+files:
+  - name: main.dart
+  - name: test.dart
