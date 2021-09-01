@@ -7,21 +7,29 @@ abstract class Repository {
 }
 
 abstract class FormModel extends ChangeNotifier {
-  String text = '';
+  String get text;
   String? get errorHint;
 
   void onSubmitButtonTap();
+  void onTextFieldValueChanged(String newValue);
 }
 
 class FormModelImpl extends FormModel {
   final Repository repository;
   FormModelImpl({required this.repository});
 
+  String _text = '';
+  String get text => _text;
+
   String? _errorHint;
   String? get errorHint => _errorHint;
   set errorHint(String? value) {
     _errorHint = value;
     notifyListeners();
+  }
+
+  void onTextFieldValueChanged(String newValue) {
+    _text = newValue;
   }
 
   @override
@@ -61,7 +69,7 @@ class _ExamplePageState extends State<ExamplePage> {
                 model: widget.model,
                 builder: (context, model) {
                   return TextField(
-                    onChanged: (value) => model.text = value,
+                    onChanged: model.onTextFieldValueChanged,
                     decoration: InputDecoration(
                       errorText: model.errorHint,
                     ),
